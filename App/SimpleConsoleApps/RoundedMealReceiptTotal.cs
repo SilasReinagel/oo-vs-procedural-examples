@@ -23,15 +23,37 @@ namespace App.SimpleConsoleApps
 
         public static void OOSolution()
         {
-            var mealCost = new ConsoleNumber();
             new ConsolePrinted(
-                new FormattedText("The total meal cost is {0} dollars.",
-                    new NumberAsText(
-                        new Rounded(
-                            new Sum(
-                                mealCost,
-                                new Percentage(new ConsoleNumber()).Of(mealCost),
-                                new Percentage(new ConsoleNumber()).Of(mealCost)))))).Go();
+                new MealCostExpression(
+                    mealCost: new ConsoleNumber(), 
+                    tipRate: new ConsoleNumber(),
+                    taxRate: new ConsoleNumber())).Go();
+        }
+    }
+
+    internal class MealCostExpression : Text
+    {
+        private readonly Number _mealCost;
+        private readonly Number _tipRate;
+        private readonly Number _taxRate;
+
+        public MealCostExpression(Number mealCost, Number tipRate, Number taxRate)
+        {
+            _mealCost = mealCost;
+            _tipRate = tipRate;
+            _taxRate = taxRate;
+        }
+
+        public override string Get()
+        {
+            return new FormattedText("The total meal cost is {0} dollars.",
+                new NumberAsText(
+                    new Rounded(
+                        new Sum(_mealCost, 
+                        new Percentage(_tipRate).Of(_mealCost), 
+                        new Percentage(_taxRate).Of(_mealCost))))
+                            .Get());
+
         }
     }
 }
