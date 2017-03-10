@@ -3,10 +3,10 @@ using OO.Core.Types;
 
 namespace OO.Core.Console
 {
-    public class ConsolePrinted : Work
+    public sealed class ConsolePrinted : Work
     {
         private readonly Text _text;
-        private readonly Media _media;
+        private readonly Media<Text> _media;
 
         public ConsolePrinted(Text text)
         {

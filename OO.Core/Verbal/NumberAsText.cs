@@ -2,7 +2,7 @@
 
 namespace OO.Core.Verbal
 {
-    public class NumberAsText : Text
+    public sealed class NumberAsText : Text
     {
         private readonly Number _number;
 

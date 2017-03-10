@@ -10,5 +10,10 @@ namespace OO.Core.Types
         {
             return new BooleanCondition(evaluatedCondition);
         }
+
+        public static implicit operator bool(Condition condition)
+        {
+            return condition.Evaluate();
+        }
     }
 }

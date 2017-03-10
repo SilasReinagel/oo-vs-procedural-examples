@@ -3,7 +3,7 @@ using OO.Core.Types;
 
 namespace OO.Core.Console
 {
-    public class ConsoleNumber : Number
+    public sealed class ConsoleNumber : Number
     {
         private readonly Text _text;
 
@@ -12,7 +12,7 @@ namespace OO.Core.Console
             _text = new ConsoleText();
         }
 
-        protected override decimal AsReal()
+        public override decimal AsDecimal()
         {
             return new TextAsNumber(_text);
         }

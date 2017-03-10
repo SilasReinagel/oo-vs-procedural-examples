@@ -2,20 +2,21 @@
 
 namespace OO.Core.Math
 {
-    public class Sum : Number
+    public sealed class Sum : Number
     {
-        private readonly Number _first;
-        private readonly Number _second;
+        private readonly Numbers _numbers;
 
-        public Sum(Number first, Number second)
+        public Sum(params Number[] numbers)
+            : this (new Numbers(numbers)) { }
+
+        public Sum(Numbers numbers)
         {
-            _first = first;
-            _second = second;
+            _numbers = numbers;
         }
 
-        protected override decimal AsReal()
+        public override decimal AsDecimal()
         {
-            return _first + _second;
+            return _numbers.Sum();
         }
     }
 }

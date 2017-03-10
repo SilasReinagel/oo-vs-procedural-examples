@@ -1,4 +1,5 @@
 ﻿using App.SimpleConsoleApps;
+using System;
 using System.Threading;
 
 namespace App
@@ -7,8 +8,14 @@ namespace App
     {
         static void Main(string[] args)
         {
-            SumOfTwoInts.ProceduralSolution();
-            SumOfTwoInts.OOSolution();
+            try
+            {
+                RoundedMealReceiptTotal.OOSolution();
+            }
+            catch (Exception ex)
+            {
+                var exDetails = ex;
+            }
 
             Thread.Sleep(500);
         }
