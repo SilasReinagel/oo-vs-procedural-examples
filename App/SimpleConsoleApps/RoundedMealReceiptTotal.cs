@@ -50,10 +50,8 @@ namespace App.SimpleConsoleApps
                 new NumberAsText(
                     new Rounded(
                         new Sum(_mealCost, 
-                        new Percentage(_tipRate).Of(_mealCost), 
-                        new Percentage(_taxRate).Of(_mealCost))))
-                            .Get());
-
+                            new Percentage(_tipRate).Of(_mealCost), 
+                            new Percentage(_taxRate).Of(_mealCost)))).Get());
         }
     }
 }

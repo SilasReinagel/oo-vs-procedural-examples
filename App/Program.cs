@@ -10,7 +10,7 @@ namespace App
         {
             try
             {
-                RoundedMealReceiptTotal.OOSolution();
+                NumberWeirdOrNot.OOSolution();
             }
             catch (Exception ex)
             {
