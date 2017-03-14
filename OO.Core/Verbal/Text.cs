@@ -1,5 +1,4 @@
-﻿using OO.Core.Base;
-using OO.Core.Verbal;
+﻿using OO.Core.Verbal;
 
 namespace OO.Core.Types
 {

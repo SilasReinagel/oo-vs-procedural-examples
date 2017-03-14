@@ -19,11 +19,26 @@ namespace App.SimpleConsoleApps
 
         public static void OOSolution()
         {
-            var number = new ConsoleNumber();
-            new ConsolePrinted(
-                new Conditional<Text>(new IsOdd(number) || new IsInRangeInclusive(number, 6, 20), 
-                    "Weird", 
-                    "Not Weird")).Go();
+             new ConsolePrinted(
+                new IsWeirdText(
+                    new ConsoleNumber())).Go();
+        }
+
+        private class IsWeirdText : Text
+        {
+            private readonly Number _number;
+
+            public IsWeirdText(Number number)
+            {
+                _number = number;
+            }
+
+            public override string Get()
+            {
+                return new Conditional<Text>(new IsOdd(_number) || new IsInRangeInclusive(_number, 6, 20),
+                    "Weird",
+                    "Not Weird").Get();
+            }
         }
     }
 }

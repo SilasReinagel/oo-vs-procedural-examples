@@ -1,26 +1,20 @@
-﻿using OO.Core.Types;
-using System;
+﻿using OO.Core.Group;
+using OO.Core.Types;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace OO.Core.Math
 {
-    public sealed class Numbers
+    public sealed class Numbers : Group<Number>
     {
-        private readonly IEnumerable<Number> _numbers;
-
         public Numbers(params Number[] numbers)
             : this((IEnumerable<Number>)numbers) { }
 
         public Numbers(IEnumerable<Number> numbers)
-        {
-            _numbers = numbers;
-        }
+            : base(numbers) { }
 
-        public Number Reduce(Func<IEnumerable<Number>, Number> func)
-        {
-            return func(_numbers);
-        }
+        public Numbers(Group<Number> numbers)
+            : base(numbers) { }
 
         public Number Sum()
         {

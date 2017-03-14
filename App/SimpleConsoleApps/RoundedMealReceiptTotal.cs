@@ -1,8 +1,8 @@
 ﻿using OO.Core.Console;
-using System;
 using OO.Core.Types;
 using OO.Core.Verbal;
 using OO.Core.Math;
+using System;
 
 namespace App.SimpleConsoleApps
 {
@@ -51,7 +51,7 @@ namespace App.SimpleConsoleApps
                     new Rounded(
                         new Sum(_mealCost, 
                             new Percentage(_tipRate).Of(_mealCost), 
-                            new Percentage(_taxRate).Of(_mealCost)))).Get());
+                            new Percentage(_taxRate).Of(_mealCost))))).Get();
         }
     }
 }

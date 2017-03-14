@@ -10,7 +10,7 @@ namespace App
         {
             try
             {
-                NumberWeirdOrNot.OOSolution();
+                SumOfInts.OOSolution();
             }
             catch (Exception ex)
             {

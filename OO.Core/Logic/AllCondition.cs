@@ -6,7 +6,7 @@ namespace OO.Core.Logic
 {
     public sealed class AllCondition : Condition
     {
-        private readonly IEnumerable<Condition> _conditions;
+        private readonly System.Collections.Generic.IEnumerable<Condition> _conditions;
 
         public AllCondition(params Condition[] conditions)
         {
