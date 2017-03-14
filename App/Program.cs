@@ -10,14 +10,14 @@ namespace App
         {
             try
             {
-                SumOfInts.OOSolution();
+                MultipliersOneThruTen.OOSolution();
             }
             catch (Exception ex)
             {
                 var exDetails = ex;
             }
 
-            Thread.Sleep(500);
+            Thread.Sleep(1200);
         }
     }
 }

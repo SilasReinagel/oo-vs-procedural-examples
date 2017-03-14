@@ -7,6 +7,9 @@ namespace OO.Core.Types
 {
     public sealed class Texts : Group<Text>
     {
+        public Texts(Text text)
+            : this(new[] { text }) { }
+
         public Texts(params string[] texts)
             : this(texts.Select(x => new StringText(x))) { }
 
@@ -14,6 +17,9 @@ namespace OO.Core.Types
             : this ((IEnumerable<Text>)texts) { }
 
         public Texts(IEnumerable<Text> texts)
+            : base(texts) { }
+
+        public Texts(Group<Text> texts)
             : base(texts) { }
     }
 }

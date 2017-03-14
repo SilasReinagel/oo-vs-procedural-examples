@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OO.Core.Base;
+using OO.Core.Types;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,16 @@ namespace OO.Core.Group
         public Group<T2> Map<T2>(Func<T, T2> mapping)
         {
             return new SimpleGroup<T2>(_elements.Select(x => mapping(x)));
+        }
+
+        public Texts Texts(Func<T, Text> mapping)
+        {
+            return new Texts(_elements.Select(x => mapping(x)));
+        }
+
+        public Work ForEach(Action<T> work)
+        {
+            return new ActionWork(() => _elements.ToList().ForEach(x => work(x)));
         }
 
         public IEnumerator<T> GetEnumerator()

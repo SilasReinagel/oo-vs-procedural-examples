@@ -20,10 +20,9 @@ namespace App.SimpleConsoleApps
         {
             new ConsoleText().Get(); // Ignore first unnecessary input
             new ConsolePrinted(
-                new NumberAsText(
-                    new Sum(
-                        new TextsAsNumbers(
-                            new SplitTexts(new ConsoleText(), " "))))).Go();
+                new Sum(
+                    new TextsAsNumbers(
+                        new SplitTexts(new ConsoleText(), " ")))).Go();
         }
 
     }

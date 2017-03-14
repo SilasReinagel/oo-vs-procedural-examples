@@ -1,6 +1,5 @@
 ﻿using OO.Core.Console;
 using OO.Core.Math;
-using OO.Core.Verbal;
 using System;
 
 namespace App.SimpleConsoleApps
@@ -18,8 +17,7 @@ namespace App.SimpleConsoleApps
         public static void OOSolution()
         {
             new ConsolePrinted(
-                new NumberAsText(
-                    new Sum(new ConsoleNumber(), new ConsoleNumber()))).Go();
+                new Sum(new ConsoleNumber(), new ConsoleNumber())).Go();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace OO.Core.Group
 {
     public sealed class SimpleGroup<T> : Group<T>
     {
-        public SimpleGroup(IEnumerable<T> elements) 
+        public SimpleGroup(IEnumerable<T> elements)
             : base(elements) { }
     }
 }
